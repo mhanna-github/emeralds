@@ -9,7 +9,7 @@ interface SLightParallaxProps {
   field: ImageField | null;
 }
 
-export default function SlightParallax({  field, alt }: SLightParallaxProps) {
+export default function SlightParallax({  field }: SLightParallaxProps) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
       target: ref,

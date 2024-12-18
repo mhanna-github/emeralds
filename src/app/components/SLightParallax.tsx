@@ -7,7 +7,6 @@ import { PrismicNextImage } from "@prismicio/next";
 import { ImageField } from "@prismicio/types";
 interface SLightParallaxProps {
   field: ImageField | null;
-  alt: string;
 }
 
 export default function SlightParallax({  field, alt }: SLightParallaxProps) {
@@ -31,7 +30,7 @@ export default function SlightParallax({  field, alt }: SLightParallaxProps) {
                 <PrismicNextImage 
                     loading='lazy'
                     field={field} 
-                    alt={alt} 
+                    alt=""
                     className="w-full h-full" 
                     style={{
                         objectFit: "cover", 

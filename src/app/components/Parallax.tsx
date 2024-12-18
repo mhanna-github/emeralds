@@ -5,7 +5,6 @@ import { useRef } from 'react';
 import React from 'react'
 import { PrismicNextImage } from "@prismicio/next";
 import { ImageField } from "@prismicio/types";
-
 interface ParallaxProps {
   field: ImageField | null;
   alt: string;
@@ -32,7 +31,7 @@ export default function Parallax({ field, alt }: ParallaxProps) {
                 <PrismicNextImage 
                     loading='lazy'
                     field={field} 
-                    alt={alt} 
+                    alt=""
                     className="w-full h-full" 
                     style={{
                         objectFit: "cover", 

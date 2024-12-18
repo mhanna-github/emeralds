@@ -10,7 +10,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       const scroll = new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]') as HTMLElement,
         smooth: true,
-      } as any);
+      } as ConstructorParameters<typeof LocomotiveScroll>[0]);
 
       return () => {
         scroll.destroy();

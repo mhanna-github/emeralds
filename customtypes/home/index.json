@@ -169,6 +169,27 @@
           }
         }
       },
+      "footer_title": {
+        "type": "Text",
+        "config": {
+          "label": "footer title",
+          "placeholder": ""
+        }
+      },
+      "footer_text": {
+        "type": "Text",
+        "config": {
+          "label": "footer text",
+          "placeholder": ""
+        }
+      },
+      "footer_logo": {
+        "type": "Text",
+        "config": {
+          "label": "footer logo",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

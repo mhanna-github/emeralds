@@ -260,6 +260,39 @@ interface HomeDocumentData {
   works: prismic.GroupField<Simplify<HomeDocumentDataWorksItem>>;
 
   /**
+   * footer title field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.footer_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  footer_title: prismic.KeyTextField;
+
+  /**
+   * footer text field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.footer_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  footer_text: prismic.KeyTextField;
+
+  /**
+   * footer logo field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.footer_logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  footer_logo: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Home*
    *
    * - **Field Type**: Slice Zone

@@ -4,7 +4,7 @@ import { Hero } from "./components/hero";
 import { About } from "./components/about";
 import { TextBlock } from "./components/textBlock";
 import { Works } from "./components/works";
-import { PrismicNextLink } from "@prismicio/next";
+import { Footer } from "./components/footer";
 
 export default async function Home() {
   const client = createClient();
@@ -25,7 +25,7 @@ export default async function Home() {
   }));
 
   return (
-    <>
+    <main data-scroll-container>
       <Nav navigation={navigation} />
       <Hero 
         title={page.data.home_title} 
@@ -49,6 +49,10 @@ export default async function Home() {
         text={page.data.middle_text_block} 
       />
       <Works works={works} />
-    </>
+      <Footer 
+        title={page.data.footer_title} 
+        text={page.data.footer_text}
+      />
+    </main>
   );
 }

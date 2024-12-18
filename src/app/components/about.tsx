@@ -1,4 +1,5 @@
 import { PrismicNextImage } from "@prismicio/next";
+import SlightParallax from "./SLightParallax";
 
 interface AboutProps {
     span1: string;
@@ -17,8 +18,8 @@ export function About({ span1, title1, text1, span2, title2, text2, image1, imag
         <section id="about" className="px-3 mt-16 lg:mt-28">
             <div className="flex flex-col gap-[50px] lg:flex-row justify-between">
                 <div className="lg:w-[640px] flex flex-col items-start">
-                    <div className="flex flex-row-reverse items-start gap-[20px]">
-                        <span className="text-p uppercase font-thin italic font-hatton text-right">
+                    <div data-scroll data-scroll-css-progress data-scroll-offset="10%, 75%" style={{opacity: `var(--progress)`}} className="flex flex-row-reverse items-start gap-[20px]">
+                        <span data-scroll data-scroll-speed="0.05" className="text-p uppercase font-thin italic font-hatton text-right">
                             {span1}
                         </span>
                         <h2 className="text-h2 uppercase font-hatton">
@@ -30,8 +31,8 @@ export function About({ span1, title1, text1, span2, title2, text2, image1, imag
                     </p>
                 </div>
                 <div className="lg:w-[640px] lg:mt-[300px] flex flex-col items-end">
-                    <div className="flex flex-row items-start gap-[20px]">
-                        <span className="text-p uppercase font-thin italic font-hatton text-left ">
+                    <div data-scroll data-scroll-css-progress data-scroll-offset="10%, 75%" style={{opacity: `var(--progress)`}} className="flex flex-row items-start gap-[20px]">
+                        <span data-scroll data-scroll-speed="0.05" className="text-p uppercase font-thin italic font-hatton text-left ">
                             {span2}
                         </span>
                         <h2 className="text-h2 uppercase font-hatton text-right">
@@ -43,25 +44,16 @@ export function About({ span1, title1, text1, span2, title2, text2, image1, imag
                     </p>
                 </div>
             </div>
-            <div className="mt-16 lg:mt-28 lg:w-1/2 flex flex-row gap-2 justify-center lg:justify-start lg:gap-5">
-                <figure className="w-1/2 h-full mt-[40px]">
-                    <PrismicNextImage 
-                        className="w-full h-full object-cover"
-                        field={image1}
-                        alt="" />
+            <div className="mt-16 lg:mt-36 lg:w-1/2 flex flex-row gap-[0.75rem] justify-center lg:justify-start lg:gap-5">
+                <figure className="w-full h-full mt-[40px]">
+                    <SlightParallax field={image1} alt="" />
                 </figure>
-                <div className="w-1/2 flex flex-col gap-2 lg:gap-5">
-                    <figure className="w-[80%] lg:w-[90%] h-full">
-                        <PrismicNextImage 
-                            className="w-full h-full object-cover"
-                            field={image2}
-                            alt="" />
+                <div className="w-full flex flex-col gap-[0.75rem] lg:gap-5">
+                    <figure className="w-[95%] h-full">
+                        <SlightParallax field={image2} alt="" />
                     </figure>
                     <figure className="w-full h-full">
-                        <PrismicNextImage 
-                            className="w-[100%] lg:w-full h-full object-cover"
-                            field={image3}
-                            alt="" />
+                        <SlightParallax field={image3} alt="" />
                     </figure>
                 </div>
             </div>

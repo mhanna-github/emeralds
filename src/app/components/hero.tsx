@@ -1,32 +1,32 @@
 'use client'
 
-import Image from "next/image";
-import { PrismicNextImage } from "@prismicio/next";
+import { ImageField } from "@prismicio/types";
+import LocomotiveScroll from 'locomotive-scroll';
+import Parallax from "./Parallax";
 
 interface HomeProps {
     title: string;
-    image: string | null;  
-    text: string;
+    image:  ImageField | null; 
 }
 
-export function Hero({ title, image, text }: HomeProps) {
+export function Hero({ title, image }: HomeProps) {
+
     return (
-        <main className="w-full">
-            <h1 className="text-h1 uppercase font-bold font-hatton">
+        <header id="home" className="w-full">
+            <h1 data-scroll data-scroll-speed="0.1" className="text-h1 uppercase font-bold font-hatton">
                 {title}
             </h1>
             {image && (
-                <figure className="-mt-6 lg:-mt-16 w-full lg:h-[80vh]">
-                    <PrismicNextImage 
-                        field={image}
-                        alt=""
-                        className="w-full h-full object-cover" 
+                <figure className="-mt-[5%] lg:-mt-[4%] w-full lg:h-[80vh] h-[40vh] relative overflow-hidden">
+                    <Parallax 
+                        field={image} 
+                        alt="" 
                     />
                 </figure>
-            )}
-            <p className="mt-1 text-body text-center w-[90%] lg:w-[65%] mx-auto">
-                {text}
+            )}      
+            <p className="mt-1 text-body text-center w-[90%] lg:w-[865px] mx-auto">
+                Creating <span className="font-bold italic">custom clothes designs</span> inspired by simple things that surround us everyday. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <span className="font-bold italic">tempor</span> incididunt.
             </p>
-        </main>
+        </header>
     )
 }

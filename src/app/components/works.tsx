@@ -1,66 +1,32 @@
 'use client'
 import { PrismicNextImage } from "@prismicio/next";
-import '@splidejs/splide/css/core';
-import { Splide } from '@splidejs/splide';
-import { useEffect } from 'react';
+import Parallax from "./Parallax";
 
 interface WorksProps {
     image: string | null;
 }
 
 export function Works({works}:{ works: WorksProps[] }) {
-    useEffect(() => {
-        const splide = new Splide('.splide', {
-            direction: 'ttb',
-            height   : '100vh',
-            wheel    : true,
-            waitForTransition: true,
-            wheelMinThreshold: 20,
-            wheelStep: 1,
-            arrows: false,
-            pagination: false,
-            perPage: 1,
-            perMove: 1,
-            speed: 800,
-            easing: 'ease',
-            lazyLoad: 'nearby',
-            releaseWheel: true,
-        });
-        
-        splide.mount();
-        
-        return () => {
-            splide.destroy();
-        };
-    }, []);
     
     return (
-        <section className="mt-16 lg:mt-28">
-            <div className="flex flex-row items-start ml-[10%] gap-[20px]">
-                <span className="text-p uppercase font-thin italic font-hatton text-right">
+        <section id="works" className="mt-16 lg:mt-28">
+            <div data-scroll data-scroll-css-progress data-scroll-offset="10%, 75%" style={{opacity: `var(--progress)`}} className="flex flex-row items-start ml-[10%] gap-[20px]">
+                <span data-scroll data-scroll-speed="0.05" className="text-p uppercase font-thin italic font-hatton text-right">
                     Some of
                 </span>
                 <h2 className="text-h2 uppercase font-hatton">
                     Works
                 </h2>
             </div>
-            <div className="splide">
-                <div className="splide__track"> 
-                    <ul className="splide__list">
-                        {works.map((work, index) => (
-                            <li key={index} className="splide__slide">
-                                <figure className="w-full h-[100vh]">
-                                    <PrismicNextImage 
-                                        field={work.image} 
-                                        alt=""
-                                        className="w-full h-full object-cover" 
-                                    />
-                                </figure>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
+                <ul>
+                    {works.map((work, index) => (
+                        <li className="h-[40vh] lg:h-[100vh]  scale-[1] relative overflow-hidden" key={index}>
+                            <figure className="w-full overflow-hidden">
+                                <Parallax field={work.image} alt="" />
+                            </figure>
+                        </li>
+                    ))}
+                </ul>
         </section>
     )
 }

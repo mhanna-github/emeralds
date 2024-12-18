@@ -34,7 +34,8 @@ export default {
                 p: utopiaClamp(20, 32),
                 body: utopiaClamp(12, 20),
                 small: utopiaClamp(12, 14),
-                button: '14px'
+                big: utopiaClamp(34, 240),
+                button: '24px'
             },
             colors: {
                 'black': '#131313',

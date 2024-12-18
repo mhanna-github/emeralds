@@ -1,5 +1,5 @@
-import { PrismicNextLink } from "@prismicio/next";
-
+import LocomotiveScroll from 'locomotive-scroll';
+import { LinkButton } from './LinkButton';
 interface NavProps {
     link: string;
     title: string;
@@ -8,15 +8,11 @@ interface NavProps {
 export function Nav({ navigation }: { navigation: NavProps[] }) {
 
     return (
-        <nav className="px-5 lg:px-12 mt-4">
+        <nav className="px-5 lg:px-12 mt-4 fixed top-0 left-0 w-full z-50">
             <ul className="hidden lg:flex flex-row justify-end gap-4 text-small">
                 {navigation.map((item) => (
                     <li key={item.title}>    
-                        <a href={item.link} className="uppercase group">
-                            <span className="opacity-0 group-hover:opacity-100">(</span>
-                            <span className="mx-1">{item.title}</span>
-                            <span className="opacity-0 group-hover:opacity-100">)</span>
-                        </a>
+                        <LinkButton variant='nav' href={item.link}>{item.title}</LinkButton>
                     </li>
                 ))}
             </ul>

@@ -4,13 +4,13 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
 import React from 'react'
 import { PrismicNextImage } from "@prismicio/next";
-
-interface SlightParallaxProps {
-  field: string | null;
+import { ImageField } from "@prismicio/types";
+interface SLightParallaxProps {
+  field: ImageField | null;
   alt: string;
 }
 
-export default function SlightParallax({  field, alt }: SlightParallaxProps) {
+export default function SlightParallax({  field, alt }: SLightParallaxProps) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
       target: ref,

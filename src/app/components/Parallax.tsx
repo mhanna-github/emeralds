@@ -4,9 +4,10 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import { useRef } from 'react';
 import React from 'react'
 import { PrismicNextImage } from "@prismicio/next";
+import { ImageField } from "@prismicio/types";
 
 interface ParallaxProps {
-  field: string | null;
+  field: ImageField | null;
   alt: string;
 }
 

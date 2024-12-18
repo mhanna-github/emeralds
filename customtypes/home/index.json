@@ -117,6 +117,58 @@
           "thumbnails": []
         }
       },
+      "text_block1": {
+        "type": "Text",
+        "config": {
+          "label": "text block1",
+          "placeholder": ""
+        }
+      },
+      "text_block2": {
+        "type": "Text",
+        "config": {
+          "label": "text block2",
+          "placeholder": ""
+        }
+      },
+      "middle_text_block": {
+        "type": "Text",
+        "config": {
+          "label": "middle text block",
+          "placeholder": ""
+        }
+      },
+      "works_title": {
+        "type": "Text",
+        "config": {
+          "label": "works title",
+          "placeholder": ""
+        }
+      },
+      "works_span": {
+        "type": "Text",
+        "config": {
+          "label": "works span",
+          "placeholder": ""
+        }
+      },
+      "works": {
+        "type": "Group",
+        "config": {
+          "label": "works",
+          "repeat": true,
+          "fields": {
+            "work_image": {
+              "type": "Image",
+              "config": {
+                "label": "work image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

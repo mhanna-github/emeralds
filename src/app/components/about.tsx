@@ -43,7 +43,7 @@ export function About({ span1, title1, text1, span2, title2, text2, image1, imag
                     </p>
                 </div>
             </div>
-            <div className="mt-16 lg:w-1/2 flex flex-row gap-2 justify-center lg:justify-start lg:gap-5">
+            <div className="mt-16 lg:mt-28 lg:w-1/2 flex flex-row gap-2 justify-center lg:justify-start lg:gap-5">
                 <figure className="w-1/2 h-full mt-[40px]">
                     <PrismicNextImage 
                         className="w-full h-full object-cover"

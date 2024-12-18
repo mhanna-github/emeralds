@@ -9,7 +9,7 @@ interface HomeProps {
     text: string;
 }
 
-export function Main({ title, image, text }: HomeProps) {
+export function Hero({ title, image, text }: HomeProps) {
     return (
         <main className="w-full">
             <h1 className="text-h1 uppercase font-bold font-hatton">
@@ -24,7 +24,7 @@ export function Main({ title, image, text }: HomeProps) {
                     />
                 </figure>
             )}
-            <p className="mt-2 text-body text-center w-[90%] lg:w-[65%] mx-auto">
+            <p className="mt-1 text-body text-center w-[90%] lg:w-[65%] mx-auto">
                 {text}
             </p>
         </main>

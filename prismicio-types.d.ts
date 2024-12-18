@@ -29,6 +29,21 @@ export interface HomeDocumentDataNavigationItem {
   nav_link_title: prismic.KeyTextField;
 }
 
+/**
+ * Item in *Home → works*
+ */
+export interface HomeDocumentDataWorksItem {
+  /**
+   * work image field in *Home → works*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.works[].work_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  work_image: prismic.ImageField<never>;
+}
+
 type HomeDocumentDataSlicesSlice = never;
 
 /**
@@ -179,6 +194,72 @@ interface HomeDocumentData {
   about_image3: prismic.ImageField<never>;
 
   /**
+   * text block1 field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.text_block1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_block1: prismic.KeyTextField;
+
+  /**
+   * text block2 field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.text_block2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_block2: prismic.KeyTextField;
+
+  /**
+   * middle text block field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.middle_text_block
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  middle_text_block: prismic.KeyTextField;
+
+  /**
+   * works title field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.works_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  works_title: prismic.KeyTextField;
+
+  /**
+   * works span field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.works_span
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  works_span: prismic.KeyTextField;
+
+  /**
+   * works field in *Home*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.works[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  works: prismic.GroupField<Simplify<HomeDocumentDataWorksItem>>;
+
+  /**
    * Slice Zone field in *Home*
    *
    * - **Field Type**: Slice Zone
@@ -259,6 +340,7 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataNavigationItem,
+      HomeDocumentDataWorksItem,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
     };

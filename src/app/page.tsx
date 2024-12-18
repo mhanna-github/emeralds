@@ -1,7 +1,9 @@
 import { createClient } from "@/prismicio";
 import { Nav } from "./components/nav";
-import { Main } from "./components/home";
+import { Hero } from "./components/hero";
 import { About } from "./components/about";
+import { TextBlock } from "./components/textBlock";
+import { Works } from "./components/works";
 import { PrismicNextLink } from "@prismicio/next";
 
 export default async function Home() {
@@ -18,10 +20,14 @@ export default async function Home() {
     link: nav.nav_link || '#',
   }));
 
+  const works = (page.data.works ?? []).map(work => ({
+    image: work.work_image || null,
+  }));
+
   return (
     <>
       <Nav navigation={navigation} />
-      <Main 
+      <Hero 
         title={page.data.home_title} 
         image={page.data.home_image} 
         text={page.data.home_text} 
@@ -37,6 +43,12 @@ export default async function Home() {
         image2={page.data.about_image2} 
         image3={page.data.about_image3} 
       />
+      <TextBlock 
+        title={page.data.text_block1} 
+        subtitle={page.data.text_block2} 
+        text={page.data.middle_text_block} 
+      />
+      <Works works={works} />
     </>
   );
 }

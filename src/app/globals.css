@@ -7,3 +7,8 @@
   --background: #F5F5F5;
   --color: #171717;
 }
+
+::selection {
+  background: black;
+  color: white;  /* text color when highlighted */
+}

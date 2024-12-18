@@ -1,4 +1,3 @@
-import { PrismicNextImage } from "@prismicio/next";
 import SlightParallax from "./SLightParallax";
 
 interface AboutProps {

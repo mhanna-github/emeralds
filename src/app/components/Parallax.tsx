@@ -6,11 +6,11 @@ import React from 'react'
 import { PrismicNextImage } from "@prismicio/next";
 
 interface ParallaxProps {
-    field: any; 
-    alt?: string;
+  field: string | null;
+  alt: string;
 }
 
-export default function Parallax({ field, alt = "" }: ParallaxProps) {
+export default function Parallax({ field, alt }: ParallaxProps) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
       target: ref,

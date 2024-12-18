@@ -1,5 +1,5 @@
 'use client'
-import { PrismicNextImage } from "@prismicio/next";
+
 import Parallax from "./Parallax";
 
 interface WorksProps {

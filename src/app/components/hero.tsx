@@ -1,7 +1,6 @@
 'use client'
 
 import { ImageField } from "@prismicio/types";
-import LocomotiveScroll from 'locomotive-scroll';
 import Parallax from "./Parallax";
 
 interface HomeProps {

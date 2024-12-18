@@ -1,4 +1,3 @@
-import LocomotiveScroll from 'locomotive-scroll';
 import { LinkButton } from './LinkButton';
 interface NavProps {
     link: string;

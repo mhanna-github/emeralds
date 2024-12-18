@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "slicemachine": "start-slicemachine"
+    "slicemachine": "start-slicemachine --port 9998"
   },
   "dependencies": {
     "@prismicio/client": "^7.13.1",

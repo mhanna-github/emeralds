@@ -1,4 +1,5 @@
 import SlightParallax from "./SLightParallax";
+import { ImageField } from "@prismicio/types";
 
 interface AboutProps {
     span1: string;
@@ -7,9 +8,9 @@ interface AboutProps {
     span2: string;
     title2: string;
     text2: string;
-    image1: string;
-    image2: string;
-    image3: string;
+    image1: ImageField | null;
+    image2: ImageField | null;
+    image3: ImageField | null;
 }
 
 export function About({ span1, title1, text1, span2, title2, text2, image1, image2, image3 }: AboutProps) {

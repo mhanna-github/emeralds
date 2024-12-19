@@ -32,25 +32,25 @@ export default async function Home() {
         image={page.data.home_image} 
       />
       <About 
-        span1={page.data.about_span1} 
-        title1={page.data.about_title1} 
-        text1={page.data.about_text1} 
-        span2={page.data.about_span2} 
-        title2={page.data.about_title2} 
-        text2={page.data.about_text2} 
-        image1={page.data.about_image1} 
-        image2={page.data.about_image2} 
-        image3={page.data.about_image3} 
+        span1={page.data.about_span1 ?? ''}
+        title1={page.data.about_title1 ?? ''}
+        text1={page.data.about_text1 ?? ''}
+        span2={page.data.about_span2 ?? ''}
+        title2={page.data.about_title2 ?? ''}
+        text2={page.data.about_text2 ?? ''}
+        image1={page.data.about_image1}
+        image2={page.data.about_image2}
+        image3={page.data.about_image3}
       />
       <TextBlock 
-        title={page.data.text_block1} 
-        subtitle={page.data.text_block2} 
-        text={page.data.middle_text_block} 
+        title={page.data.text_block1 ?? ''} 
+        subtitle={page.data.text_block2 ?? ''} 
+        text={page.data.middle_text_block ?? ''} 
       />
       <Works works={works} />
       <Footer 
-        title={page.data.footer_title} 
-        text={page.data.footer_text}
+        title={page.data.footer_title ?? ''} 
+        text={page.data.footer_text ?? ''}
       />
     </main>
   );

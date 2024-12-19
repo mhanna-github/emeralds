@@ -1,9 +1,10 @@
 'use client'
 
 import Parallax from "./Parallax";
+import { ImageField } from "@prismicio/types";
 
 interface WorksProps {
-    image: string | null;
+    image: ImageField | null;
 }
 
 export function Works({works}:{ works: WorksProps[] }) {
@@ -22,7 +23,7 @@ export function Works({works}:{ works: WorksProps[] }) {
                     {works.map((work, index) => (
                         <li className="h-[40vh] lg:h-[100vh]  scale-[1] relative overflow-hidden" key={index}>
                             <figure className="w-full overflow-hidden">
-                                <Parallax field={work.image} alt="" />
+                                <Parallax field={work.image} />
                             </figure>
                         </li>
                     ))}

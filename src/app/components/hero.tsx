@@ -12,7 +12,7 @@ export function Hero({ title, image, }: HomeProps) {
 
     return (
         <header id="home" className="w-full">
-            <h1 data-scroll data-scroll-speed="0.1" className="text-h1 uppercase font-bold font-hatton">
+            <h1 className="text-h1 uppercase font-bold font-hatton">
                 {title}
             </h1>
             {image && (

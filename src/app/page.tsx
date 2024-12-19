@@ -30,7 +30,6 @@ export default async function Home() {
       <Hero 
         title={page.data.home_title} 
         image={page.data.home_image} 
-        text={page.data.home_text} 
       />
       <About 
         span1={page.data.about_span1} 

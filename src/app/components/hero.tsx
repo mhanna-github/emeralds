@@ -1,14 +1,14 @@
 'use client'
 
-import { ImageField } from "@prismicio/types";
+import { KeyTextField, ImageField } from "@prismicio/types";
 import Parallax from "./Parallax";
 
 interface HomeProps {
-    title: string;
-    image:  ImageField | null; 
+    title: KeyTextField;
+    image: ImageField | null;
 }
 
-export function Hero({ title, image }: HomeProps) {
+export function Hero({ title, image, }: HomeProps) {
 
     return (
         <header id="home" className="w-full">

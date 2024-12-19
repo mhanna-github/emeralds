@@ -21,7 +21,7 @@ export function Works({works}:{ works: WorksProps[] }) {
             </div>
                 <ul>
                     {works.map((work, index) => (
-                        <li className="h-[40vh] lg:h-[100vh]  scale-[1] relative overflow-hidden" key={index}>
+                        <li className="h-[40vh] lg:h-[100vh] scale-[1] relative overflow-hidden" key={index}>
                             <figure className="w-full overflow-hidden">
                                 <Parallax field={work.image} />
                             </figure>

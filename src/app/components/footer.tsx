@@ -1,10 +1,14 @@
 import { LinkButton } from './LinkButton';
 import { createClient } from "@/prismicio";
-
+import { isFilled } from "@prismicio/client";
 
 export async function Footer() {
     const client = createClient();
     const footer = await client.getSingle("footer");
+
+    const emailLabel = (isFilled.link(footer.data.email) 
+        ? footer.data.email.text || footer.data.email.url 
+        : '') || '';
 
     return (
         <footer id="contacts" className="px-3 min-h-[60vh] lg:min-h-screen flex flex-col justify-between">
@@ -22,7 +26,7 @@ export async function Footer() {
                     <LinkButton 
                         href={footer.data.email} 
                         variant='footer'
-                        label={footer.data.email.text || footer.data.email.url}
+                        label={emailLabel}
                     />
                 </div>
             </div>

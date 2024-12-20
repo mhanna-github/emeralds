@@ -1,6 +1,6 @@
 'use client'
 import { PrismicNextLink } from '@prismicio/next';
-import { LinkField } from '@prismicio/client';
+import { LinkField, isFilled } from '@prismicio/client';
 import { MouseEvent } from 'react';
 
 interface LinkButtonProps {
@@ -17,8 +17,7 @@ export function LinkButton({ href, label, className = '', variant = 'nav', onCli
     const onClick = (e: MouseEvent<HTMLAnchorElement>) => {
         _onClick?.(e);
         
-
-        if (href.url && href.url.includes('#')) {
+        if (isFilled.link(href) && href.url?.includes('#')) {
             const id = href.url.split('#')[1];
             const anchorEl = document.getElementById(id);
             

@@ -46,14 +46,29 @@ export function About({ span1, title1, text1, span2, title2, text2, image1, imag
             </div>
             <div className="mt-16 lg:mt-36 lg:w-1/2 flex flex-row gap-[0.75rem] justify-center lg:justify-start lg:gap-5">
                 <figure className="w-full h-full mt-[20px] aspect-[425/545]">
-                    <SlightParallax field={image1} />
+                    <SlightParallax 
+                        field={image1} 
+                        width={425}
+                        height={545}
+                        quality={100}
+                    />
                 </figure>
                 <div className="w-full flex flex-col gap-[0.75rem] lg:gap-5">
                     <figure className="w-[90%] h-full aspect-[315/410]">
-                        <SlightParallax field={image2} />
+                        <SlightParallax 
+                            field={image2} 
+                            width={400}
+                            height={410}
+                            quality={100}
+                        />
                     </figure>
                     <figure className="w-full h-full aspect-[425/570]">
-                        <SlightParallax field={image3} />
+                        <SlightParallax 
+                            field={image3} 
+                            width={425}
+                            height={570}
+                            quality={100}
+                        />
                     </figure>
                 </div>
             </div>

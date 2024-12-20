@@ -23,7 +23,7 @@ export default function SlightParallax({  field }: SLightParallaxProps) {
   
       return (
     
-        <div className="w-full  overflow-hidden h-[40vh] lg:h-[60vh]  relative" ref={ref}>
+        <div className="w-full overflow-hidden h-full relative" ref={ref}>
                 <motion.div 
                 className="w-full h-[140%] absolute top-0 left-0" 
                 style={{ translateY: translateY }}>

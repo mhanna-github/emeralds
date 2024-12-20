@@ -1,10 +1,8 @@
 import { createClient } from "@/prismicio";
-import { Nav } from "./components/nav";
 import { Hero } from "./components/hero";
 import { About } from "./components/about";
 import { TextBlock } from "./components/textBlock";
 import { Works } from "./components/works";
-import { Footer } from "./components/footer";
 
 export default async function Home() {
   const client = createClient();
@@ -14,19 +12,13 @@ export default async function Home() {
   if (!page) {
     return <div>Page not found</div>;
   }
-  
-  const navigation = page.data.navigation.map(nav => ({
-    title: nav.nav_link_title ?? '',
-    link: nav.nav_link || '#',
-  }));
-
+ 
   const works = (page.data.works ?? []).map(work => ({
     image: work.work_image || null,
   }));
 
   return (
     <main data-scroll-container>
-      <Nav navigation={navigation} />
       <Hero 
         title={page.data.home_title} 
         image={page.data.home_image} 
@@ -48,10 +40,6 @@ export default async function Home() {
         text={page.data.middle_text_block ?? ''} 
       />
       <Works works={works} />
-      <Footer 
-        title={page.data.footer_title ?? ''} 
-        text={page.data.footer_text ?? ''}
-      />
     </main>
   );
 }

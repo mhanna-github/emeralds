@@ -1,40 +1,57 @@
 'use client'
+import { PrismicNextLink } from '@prismicio/next';
+import { LinkField, RTNode } from '@prismicio/types';
+import { usePathname } from 'next/navigation';
+import { MouseEvent } from 'react';
 
 interface LinkButtonProps {
-    href: string;
-    children: React.ReactNode;
+    href: any;
+    label: any;
     className?: string;
-    variant?:  'nav' | 'footer';
+    variant?: 'nav' | 'footer';
+    onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+    anchorOffset?: number;
 }
 
-export function LinkButton({ href, children, className = '', variant = 'nav' }: LinkButtonProps) {
-    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        if (href.startsWith('#')) {
-            e.preventDefault();
-            const element = document.querySelector(href);
-            if (element) {
-                element.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+export function LinkButton({ href, label, className = '', variant = 'nav', onClick: _onClick, anchorOffset = 0 }: LinkButtonProps) {
+
+    const onClick = (e: MouseEvent<HTMLAnchorElement>) => {
+        _onClick?.(e);
+        
+
+        if (href.url && href.url.includes('#')) {
+            const id = href.url.split('#')[1];
+            const anchorEl = document.getElementById(id);
+            
+            if (!anchorEl) {
+                console.warn(`Anchor element with id "${id}" not found`);
+                return;
             }
+            
+            e.preventDefault();
+            const offsetTop = anchorEl.getBoundingClientRect().top + window.scrollY;
+            window.scroll({
+                top: offsetTop - anchorOffset,
+                behavior: 'smooth',
+            });
         }
     };
 
     const variants: Record<NonNullable<LinkButtonProps['variant']>, string> = {
-        nav: 'text-small uppercase',
-        footer: 'text-p uppercase border rounded-full border-black px-4 py-2 hover:bg-black hover:text-white transition-colors'
+        nav: 'lg:text-small uppercase',
+        footer: 'text-p uppercase w-fit text-left'
     };
 
     return (
-        <a 
-            href={href}
-            onClick={scrollToSection}
-            className={`inline-flex items-center group transition-colors ${variants[variant]} ${className}`}
+        <PrismicNextLink 
+            className={`inline-flex items-center group transition-colors ${variants[variant]} ${className}
+                ${variant === 'footer' ? 'relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:bg-current after:transition-all after:duration-300 hover:after:w-full after:w-0' : ''}`} 
+            field={href} 
+            onClick={onClick}
         >
-            <span className="opacity-0 group-hover:opacity-100 transition-opacity">(</span>
-            <span className="mx-1">{children}</span>
-            <span className="opacity-0 group-hover:opacity-100 transition-opacity">)</span>
-        </a>
+            <span className={`${variant === 'footer' ? 'hidden' : 'opacity-0 group-hover:opacity-100'} transition-opacity`}>(</span>
+            <span className="mx-1">{label}</span>
+            <span className={`${variant === 'footer' ? 'hidden' : 'opacity-0 group-hover:opacity-100'} transition-opacity`}>)</span>
+        </PrismicNextLink>  
     );
 } 

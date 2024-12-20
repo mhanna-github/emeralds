@@ -11,7 +11,7 @@ interface HomeProps {
 export function Hero({ title, image, }: HomeProps) {
 
     return (
-        <header id="home" className="w-full">
+        <header id="home" className="w-full mt-9 lg:mt-4">
             <h1 className="text-h1 uppercase font-bold font-hatton">
                 {title}
             </h1>
@@ -19,6 +19,8 @@ export function Hero({ title, image, }: HomeProps) {
                 <figure className="-mt-[5%] lg:-mt-[4%] w-full lg:h-[80vh] h-[40vh] relative overflow-hidden">
                     <Parallax 
                         field={image} 
+                        width={1920}
+                        height={700}
                     />
                 </figure>
             )}      

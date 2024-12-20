@@ -1,26 +1,58 @@
-import { LinkButton } from "./LinkButton";
+import { LinkButton } from './LinkButton';
+import { createClient } from "@/prismicio";
 
-interface FooterProps {
-    title: string;
-    text: string;
-}
 
-export function Footer({title, text}: FooterProps) {
+export async function Footer() {
+    const client = createClient();
+    const footer = await client.getSingle("footer");
+
     return (
-        <footer id="contacts" className="px-3 min-h-[60vh] lg:min-h-screen flex flex-col justify-between ">
-            <div className="flex flex-col justify-center items-center content-center text-center gap-5 ">
-                <h1 data-scroll data-scroll-css-progress data-scroll-offset="10%, 75%" style={{opacity: `var(--progress)`}} className="text-big uppercase font-bold font-hatton">{title}</h1>
-                <div className="mt-[4vh] flex flex-col justify-center items-center content-center text-center gap-5">
-                    <p className="w-[90%] lg:w-[570px] text-body uppercase">{text}</p>
-                    <LinkButton href='https://example.com/' variant='footer'>Get in touch</LinkButton>
+        <footer id="contacts" className="px-3 min-h-[60vh] lg:min-h-screen flex flex-col justify-between">
+            <div className="flex-1 flex items-center justify-center">
+                <div className="flex flex-col lg:w-[70%] w-full text-left gap-5 lg:gap-10">
+                    <p 
+                        data-scroll 
+                        data-scroll-css-progress 
+                        data-scroll-offset="10%, 75%" 
+                        style={{opacity: `var(--progress)`}} 
+                        className="w-[70%] text-h5 font-hatton italic"
+                    >
+                        {footer.data.text}
+                    </p>
+                    <LinkButton 
+                        href={footer.data.email} 
+                        variant='footer'
+                        label={footer.data.email.text || footer.data.email.url}
+                    />
                 </div>
             </div>
-            <div className="flex flex-row justify-between w-full mt-auto py-4">
-                <span className="text-small "> &copy; {new Date().getFullYear()}</span>
-                <div className="flex flex-row gap-2">
-                    <LinkButton href='https://example.com/' variant='nav'>Instagram</LinkButton>
-                    <LinkButton href='https://example.com/' variant='nav'>Linkedin</LinkButton>
-                    <LinkButton href='https://example.com/' variant='nav'>Facebook</LinkButton>
+            <div className="flex flex-row justify-between w-full py-4">
+                <span className="text-small"> &copy; {new Date().getFullYear()}</span>
+                <div className="flex flex-row gap-2 align-bottom">
+                    <LinkButton 
+                        href={{ 
+                            link_type: 'Web',
+                            url: 'https://example.com/'
+                        }}
+                        variant='nav'
+                        label='Instagram'
+                    />
+                    <LinkButton 
+                        href={{ 
+                            link_type: 'Web',
+                            url: 'https://example.com/'
+                        }}
+                        variant='nav'
+                        label='Linkedin'
+                    />
+                    <LinkButton 
+                        href={{ 
+                            link_type: 'Web',
+                            url: 'https://example.com/'
+                        }}
+                        variant='nav'
+                        label='Facebook'
+                    />
                 </div>
             </div>
         </footer>

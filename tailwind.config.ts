@@ -31,6 +31,7 @@ export default {
                 h2: utopiaClamp(36, 64),
                 h3: utopiaClamp(46, 128),
                 h4: utopiaClamp(36, 64),
+                h5: utopiaClamp(28, 62),
                 p: utopiaClamp(20, 32),
                 body: utopiaClamp(12, 20),
                 small: utopiaClamp(12, 14),

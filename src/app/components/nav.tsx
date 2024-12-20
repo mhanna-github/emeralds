@@ -11,7 +11,11 @@ export async function Nav() {
             <ul className="flex flex-row justify-center lg:justify-end gap-8 lg:gap-4 text-small">
                 {navigation.data.item.map((item) => (
                     <li key={item.label} className='w-fit'>    
-                         <LinkButton variant='nav' href={item.link} label={item.label} />
+                        <LinkButton 
+                            variant='nav' 
+                            href={item.link} 
+                            label={item.label || ''} 
+                        />
                     </li>
                 ))}
             </ul>

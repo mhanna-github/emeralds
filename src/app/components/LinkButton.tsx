@@ -1,12 +1,11 @@
 'use client'
 import { PrismicNextLink } from '@prismicio/next';
-import { LinkField, RTNode } from '@prismicio/types';
-import { usePathname } from 'next/navigation';
+import { LinkField } from '@prismicio/client';
 import { MouseEvent } from 'react';
 
 interface LinkButtonProps {
-    href: any;
-    label: any;
+    href: LinkField;
+    label: string;
     className?: string;
     variant?: 'nav' | 'footer';
     onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;

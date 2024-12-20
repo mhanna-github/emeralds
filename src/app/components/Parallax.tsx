@@ -12,7 +12,7 @@ interface ParallaxProps {
   quality?: number;
 }
 
-export default function Parallax({ field, width, height, quality}: ParallaxProps) {
+export default function Parallax({ field, width, height}: ParallaxProps) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
       target: ref,

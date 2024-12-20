@@ -7,9 +7,12 @@ import { PrismicNextImage } from "@prismicio/next";
 import { ImageField } from "@prismicio/types";
 interface SLightParallaxProps {
   field: ImageField | null;
+  width: number;
+  height: number;
+  quality: number;
 }
 
-export default function SlightParallax({  field }: SLightParallaxProps) {
+export default function SlightParallax({  field, width, height }: SLightParallaxProps) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
       target: ref,
@@ -30,6 +33,9 @@ export default function SlightParallax({  field }: SLightParallaxProps) {
                 <PrismicNextImage 
                     loading='lazy'
                     field={field} 
+                    width={width}
+                    height={height}
+                    quality={100}
                     alt=""
                     className="w-full h-full" 
                     style={{

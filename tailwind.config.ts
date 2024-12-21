@@ -23,8 +23,8 @@ export default {
                 }
             },
             fontFamily: {
-                'mori': ['PP Mori', 'sans-serif'],
-                'hatton': ['PP Hatton', 'sans-serif'],
+                'mori': ['var(--font-mori)', 'sans-serif'],
+                'hatton': ['var(--font-hatton)', 'sans-serif'],
             },
             fontSize: {
                 h1: utopiaClamp(48, 195),

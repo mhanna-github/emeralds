@@ -5,16 +5,9 @@ import 'locomotive-scroll/dist/locomotive-scroll.css';
 import SmoothScroll from './components/smooth-scroll';
 import { Nav } from './components/nav';
 import { Footer } from './components/footer';
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import clsx from "clsx";
+import { Hatton } from '@/fonts/Hatton';
+import { Mori } from '@/fonts/Mori';
 
 export const metadata: Metadata = {
   title: "Emeralds",
@@ -31,7 +24,13 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={clsx(
+          Hatton.className,
+          Hatton.variable,
+          Mori.className,
+          Mori.variable,
+          'antialiased'
+        )}
       >
         <SmoothScroll>
           <Nav />

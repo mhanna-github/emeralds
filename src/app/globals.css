@@ -12,3 +12,8 @@
   background: black;
   color: white;  /* text color when highlighted */
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 rgba(0, 0, 0, 0);
+}

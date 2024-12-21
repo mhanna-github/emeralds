@@ -1,6 +1,7 @@
 import { LinkButton } from './LinkButton';
 import { createClient } from "@/prismicio";
 import { isFilled } from "@prismicio/client";
+import { PrismicRichText } from '@prismicio/react';
 
 export async function Footer() {
     const client = createClient();
@@ -13,16 +14,16 @@ export async function Footer() {
     return (
         <footer id="contacts" className="px-3 min-h-[60vh] lg:min-h-screen flex flex-col justify-between">
             <div className="flex-1 flex items-center justify-center">
-                <div className="flex flex-col lg:w-[70%] w-full text-left gap-5 lg:gap-10">
-                    <p 
+                <div className="flex flex-col w-fit lg:w-[70%] text-left gap-5 lg:gap-10">
+                    <div 
                         data-scroll 
                         data-scroll-css-progress 
                         data-scroll-offset="10%, 75%" 
                         style={{opacity: `var(--progress)`}} 
-                        className="w-[70%] text-h5 font-hatton italic"
+                        className="w-fit text-h5 font-hatton italic"
                     >
-                        {footer.data.text}
-                    </p>
+                        {footer.data.text && <PrismicRichText field={footer.data.text} />}
+                    </div>
                     <LinkButton 
                         href={footer.data.email} 
                         variant='footer'

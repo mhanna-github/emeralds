@@ -24,13 +24,13 @@ interface FooterDocumentData {
   /**
    * text field in *footer*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: footer.text
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.KeyTextField;
+  text: prismic.RichTextField;
 
   /**
    * email field in *footer*
@@ -254,24 +254,24 @@ interface HomeDocumentData {
   /**
    * text block1 field in *Home*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: home.text_block1
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text_block1: prismic.KeyTextField;
+  text_block1: prismic.RichTextField;
 
   /**
    * text block2 field in *Home*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: home.text_block2
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text_block2: prismic.KeyTextField;
+  text_block2: prismic.RichTextField;
 
   /**
    * middle text block field in *Home*

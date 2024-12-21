@@ -95,17 +95,21 @@
         }
       },
       "text_block1": {
-        "type": "Text",
+        "type": "StructuredText",
         "config": {
           "label": "text block1",
-          "placeholder": ""
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "text_block2": {
-        "type": "Text",
+        "type": "StructuredText",
         "config": {
           "label": "text block2",
-          "placeholder": ""
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "middle_text_block": {

@@ -16,7 +16,7 @@ export function Hero({ title, image, }: HomeProps) {
                 {title}
             </h1>
             {image && (
-                <figure className="-mt-[5%] lg:-mt-[4%] w-full lg:h-[80vh] h-[40vh] relative overflow-hidden">
+                <figure className="-mt-[5%] lg:-mt-[2%] w-full lg:h-[80vh] h-[40vh] relative overflow-hidden">
                     <Parallax 
                         field={image} 
                         width={1920}

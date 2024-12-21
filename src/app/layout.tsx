@@ -28,7 +28,8 @@ export default async function RootLayout({
           Hatton.variable,
           Mori.className,
           Mori.variable,
-          'antialiased'
+          'antialiased',
+          'bg-white'
         )}
       >
         <SmoothScroll>

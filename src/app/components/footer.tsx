@@ -31,9 +31,9 @@ export async function Footer() {
                     />
                 </div>
             </div>
-            <div className="flex flex-row justify-between w-full py-4">
+            <div className="flex flex-row justify-between w-full py-4 align-center content-center">
                 <span className="text-small"> &copy; {new Date().getFullYear()}</span>
-                <div className="flex flex-row gap-2 align-bottom">
+                <div className="flex flex-row gap-2 align-center content-center">
                     <LinkButton 
                         href={{ 
                             link_type: 'Web',

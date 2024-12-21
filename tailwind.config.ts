@@ -40,8 +40,7 @@ export default {
             },
             colors: {
                 'black': '#131313',
-                'white': '#F4F8F9',
-                'purple': '#E0E0E0',
+                'white': '#F4F8F9'
             },
             screens: {
                 'to-2xs': { max: '339px' },

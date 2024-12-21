@@ -10,7 +10,7 @@
 
 ::selection {
   background: black;
-  color: white;  /* text color when highlighted */
+  color: white; 
 }
 
 * {
